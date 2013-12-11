@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HOW LONG?</title>
-    <script src="howlong.js"></script>
-    <script src="midway.js"></script>
-
+    <title>How Long?</title>
     <style>
     html {
         min-height: 100%;
@@ -54,6 +51,10 @@ document.write("<div class='days midway midway-horizontal midway-vertical'>"+dif
 //enter the count up date using the format year/month/day
 countup(2013,11,20)
 
+</script>
+
+<script>
+    \function Midway(){var e=$(".midway-horizontal"),t=$(".midway-vertical");e.each(function(){$(this).css("marginLeft",-$(this).outerWidth()/2)});t.each(function(){$(this).css("marginTop",-$(this).outerHeight()/2)});e.css({display:"inline",position:"absolute",left:"50%"});t.css({display:"inline",position:"absolute",top:"50%"})}$(window).on("load",Midway);$(window).on("resize",Midway)
 </script>
 
 </body>
