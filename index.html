@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>How Long?</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/cgu3idg.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <style>
     html {
+        min-height: 100%;
+        height: 100%;
+    }
+    body {
         min-height: 100%;
     }
     html, body {
         width: 100%;
         height: 100%;
-        background: rgba(81, 56, 161, 1.0);
+        background: rgba(80, 51, 131, 1.0);
         color: white;
         -webkit-font-smoothing: antialiased;
         font-smooth: always;
     }
 
     .days {
-        font-family: "GTWalsheim", "Gill Sans", "Helvetica Neue";
+        font-family: "Gill Sans", "Helvetica Neue", "Arial";
         font-weight: bold;
-        font-size: 10vw;
+        font-size: 8vw;
         text-align: center;
+        width: 100%;
     }
 
     </style>
@@ -28,7 +36,7 @@
 </head>
 <body>
 
-
+<section class="centerVertical centerHorizontal">
 <script>
 var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
 
@@ -43,12 +51,15 @@ var todaystring=montharray[todaym]+" "+todayd+", "+todayy
 var paststring=montharray[m-1]+" "+d+", "+yr
 var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1)
 difference+=""
-document.write("<div class='days midway midway-horizontal midway-vertical'>"+difference+" days</div>")
+document.write("<div class='days midway-horizontal midway-vertical'>"+difference+" days</div>")
 }
+
 //enter the count up date using the format year/month/day
 countup(2013,11,20)
 
 </script>
+
+</section>
 
 <script>
     function Midway(){
