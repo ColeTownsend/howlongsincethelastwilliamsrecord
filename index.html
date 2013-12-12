@@ -23,8 +23,7 @@
         font-smooth: always;
         font-family: "Gill Sans", "Helvetica Neue", "Arial";
         text-align: center;
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 36px;
     }
 
     a {
@@ -70,7 +69,7 @@
         margin-bottom: 100px;
         }
         body, p {
-            font-size: 18px;
+            font-size: 24px;
         }
     }
 
@@ -102,8 +101,8 @@ countup(2013,11,14)
 
 </script>
 
-<p><a href="https://twitter.com/Williams_Record">What do you think they're up to?</a></p>
-
+<a class="message" href="https://twitter.com/Williams_Record">
+</a>
 </section>
 
 <script>
@@ -130,6 +129,34 @@ countup(2013,11,14)
 }
     $(window).on('load', Midway);
     $(window).on('resize', Midway);
+</script>
+
+<script type="text/javascript">
+    // Define your messages. May contain HTML.
+var messages = [
+  "I wonder what they're up to?",
+  "They're writing an expose on Sage B's new turtle. Check it out.",
+  "Take a look at their Twitter and see...",
+  "Ask them what they're up to!"
+];
+
+// Define the functiomn
+function showMessage(selector) {
+  var element   = document.querySelector(selector);
+  var index     = 0;
+  var lastIndex = window.localStorage['lastShownMessageIndex'];
+  if (lastIndex) {
+    while (index == lastIndex) {
+      index = Math.floor(Math.random() * messages.length);
+    }
+  }
+  var msg = messages[index];
+  element.innerHTML = msg;
+  window.localStorage['lastShownMessageIndex'] = index;
+}
+
+// Call function with selector (where to put message?)
+showMessage(".message");
 </script>
 
 </body>
