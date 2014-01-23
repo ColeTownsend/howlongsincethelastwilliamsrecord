@@ -20,4 +20,4 @@ difference+=""
 document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+difference+"days"+"</h1>")
 }
 //enter the count up date using the format year/month/day
-countup(2013,11,20)
+countup(2014,1,22)
