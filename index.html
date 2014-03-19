@@ -75,12 +75,17 @@
 
 
     </style>
-
 </head>
 <body>
 
 <section class="midway-horizontal midway-vertical">
 <script>
+/*
+Count up from any date script-
+By JavaScript Kit (www.javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
 var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
 
 function countup(yr,m,d){
@@ -94,14 +99,19 @@ var todaystring=montharray[todaym]+" "+todayd+", "+todayy
 var paststring=montharray[m-1]+" "+d+", "+yr
 var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1)
 difference+=""
-document.write("<div class='days'>"+difference+" days</div>")
+if difference == 0 {
+  document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+"It published today."+"</h1>")
+else {
+  document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+difference+"days"+"</h1>")
+}
+}
 }
 //enter the count up date using the format year/month/day
-countup(2014,1,22)
+countup(2014,3,19)
 
 </script>
 
-<p class="message">"Speaking of The Record, where is The Cowbell?"</p>
+<p class="message"></p>
 
 </section>
 
@@ -131,29 +141,28 @@ countup(2014,1,22)
     $(window).on('resize', Midway);
 </script>
 
-// <script type="text/javascript">
-//     // Define your messages. May contain HTML.
-// var messages = [
-//   "Speaking of The Record, where is The Cowbell?"
-// ];
+<script type="text/javascript">
+var messages = [
+  "Speaking of The Record, where is The Cowbell?"
+];
 
-// // Define the functiomn
-// function showMessage(selector) {
-//   var element   = document.querySelector(selector);
-//   var index     = 0;
-//   var lastIndex = window.localStorage['lastShownMessageIndex'];
-//   if (lastIndex) {
-//     while (index == lastIndex) {
-//       index = Math.floor(Math.random() * messages.length);
-//     }
-//   }
-//   var msg = messages[index];
-//   element.innerHTML = msg;
-//   window.localStorage['lastShownMessageIndex'] = index;
-// }
+// Define the functiomn
+function showMessage(selector) {
+  var element   = document.querySelector(selector);
+  var index     = 0;
+  var lastIndex = window.localStorage['lastShownMessageIndex'];
+  if (lastIndex) {
+    while (index == lastIndex) {
+      index = Math.floor(Math.random() * messages.length);
+    }
+  }
+  var msg = messages[index];
+  element.innerHTML = msg;
+  window.localStorage['lastShownMessageIndex'] = index;
+}
 
-// // Call function with selector (where to put message?)
-// showMessage(".message");
+// Call function with selector (where to put message?)
+showMessage(".message");
 // </script>
 
 </body>
