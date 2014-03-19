@@ -99,7 +99,7 @@ var todaystring=montharray[todaym]+" "+todayd+", "+todayy
 var paststring=montharray[m-1]+" "+d+", "+yr
 var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1)
 difference+=""
-if difference == 0 {
+if difference < 1 {
   document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+"It published today."+"</h1>")
 else {
   document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+difference+"days"+"</h1>")
