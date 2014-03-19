@@ -17,7 +17,12 @@ var todaystring=montharray[todaym]+" "+todayd+", "+todayy
 var paststring=montharray[m-1]+" "+d+", "+yr
 var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1)
 difference+=""
-document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+difference+"days"+"</h1>")
+if difference == 0 {
+  document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+"It published today."+"</h1>")
+else {
+  document.write("<h1 class="midway-vertical midway-horizontal" id='days'>"+difference+"days"+"</h1>")
+}
+}
 }
 //enter the count up date using the format year/month/day
-countup(2014,1,22)
+countup(2014,3,19)
